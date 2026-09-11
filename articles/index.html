@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notes techniques sur les performances de VoidGlass." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#07080D">
+  <title>Articles — VoidGlass</title>
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="VoidGlass, accueil">
+      <span class="brand-mark"><img src="../assets/images/VoidGlass.png" alt=""></span>
+      <span>VOIDGLASS</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="../index.html" data-i18n="nav.home">Accueil</a>
+      <a href="index.html" class="current" data-i18n="nav.articles">Articles</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="#" class="discord-link" data-discord>Discord</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-download" href="#" data-download>Download</a>
+      <button class="language-switch" type="button" aria-label="Switch to English">
+        <span class="active" data-language="fr">FR</span>
+        <span aria-hidden="true">/</span>
+        <span data-language="en">EN</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="journal">
+    <header class="journal-header">
+      <h1 data-i18n="page.title">Articles</h1>
+    </header>
+
+    <a class="journal-entry journal-link" href="voidglass.html">
+      <div class="journal-meta">
+        <span>01</span>
+        <span data-i18n="voidglass.category">LE PROJET</span>
+      </div>
+      <div class="journal-content">
+        <h2 data-i18n="voidglass.title">Pourquoi VoidGlass ?</h2>
+        <p class="journal-lead" data-i18n="voidglass.lead">Le point de départ du projet, puis son évolution vers l’enregistrement et l’analyse après partie.</p>
+        <p class="journal-preview" data-i18n="voidglass.preview">À l’origine, VoidGlass répondait à un besoin très simple : disposer en jeu des informations de jungle utiles, sans perdre le confort de jeu. Quand ces informations ont été intégrées à League of Legends, le projet a naturellement évolué.</p>
+        <span class="read-link" data-i18n="page.read">Lire l’article →</span>
+      </div>
+    </a>
+
+    <a class="journal-entry journal-link" href="recorder.html">
+      <div class="journal-meta">
+        <span>02</span>
+        <span data-i18n="recorder.category">RECORDER</span>
+      </div>
+      <div class="journal-content">
+        <h2 data-i18n="recorder.title">Recorder performance</h2>
+        <p class="journal-lead" data-i18n="recorder.lead">Capture, encodage et compromis : les choix qui comptent pour enregistrer une partie.</p>
+        <p class="journal-preview" data-i18n="recorder.preview">Un recorder doit d’abord préserver la partie en cours. L’encodage matériel et le chemin emprunté par l’image déterminent une grande partie de son impact sur la machine.</p>
+        <span class="read-link" data-i18n="page.read">Lire l’article →</span>
+      </div>
+    </a>
+
+    <a class="journal-entry journal-link" href="overlay.html">
+      <div class="journal-meta">
+        <span>03</span>
+        <span data-i18n="overlay.category">OVERLAY</span>
+      </div>
+      <div class="journal-content">
+        <h2 data-i18n="overlay.title">Overlay et performances</h2>
+        <p class="journal-lead" data-i18n="overlay.lead">Ce qu’implique un overlay externe et la place du Multi-Plane Overlay.</p>
+        <p class="journal-preview" data-i18n="overlay.preview">Un overlay reste une fenêtre supplémentaire à afficher. Son impact dépend de son rendu, de sa consommation mémoire et du chemin de composition disponible sur la configuration.</p>
+        <span class="read-link" data-i18n="page.read">Lire l’article →</span>
+      </div>
+    </a>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="../index.html"><span class="brand-mark"><img src="../assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a>
+    <p>© <span id="year"></span> VOIDGLASS</p>
+  </footer>
+
+  <script src="../assets/lang/articles/index/index.fr.js"></script>
+  <script src="../assets/lang/articles/index/index.en.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script data-goatcounter="https://voidglass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

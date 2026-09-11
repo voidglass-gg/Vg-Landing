@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VoidGlass, overlay et recorder haute performance pour League of Legends." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#07080D">
+  <title>VoidGlass — Overlay & Recorder</title>
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-blue" aria-hidden="true"></div>
+  <div class="ambient ambient-purple" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="VoidGlass, accueil">
+      <span class="brand-mark"><img src="assets/images/VoidGlass.png" alt=""></span>
+      <span>VOIDGLASS</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#experience" data-i18n="nav.preview">Aperçu</a>
+      <a href="articles/index.html" data-i18n="nav.articles">Articles</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#" class="discord-link" data-discord data-i18n="nav.discord">Discord</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-download" href="#" data-download>Download</a>
+      <button class="language-switch" type="button" aria-label="Switch to English">
+        <span class="active" data-language="fr">FR</span>
+        <span aria-hidden="true">/</span>
+        <span data-language="en">EN</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">
+          OVERLAY · RECORDER · LEAGUE OF LEGENDS
+        </p>
+        <h1 id="hero-title">
+          <span data-i18n="hero.title">Overlay / Recorder</span>
+          <span class="gradient-text" data-i18n="hero.highlight">for League of Legends.</span>
+        </h1>
+        <p class="hero-description" data-i18n="hero.description">
+          Un overlay léger et un recorder matériel, réunis dans une application Windows.
+        </p>
+        <div class="hero-actions">
+          <a class="download-button" href="#" data-download>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/>
+            </svg>
+            <span>
+              <small data-i18n="download.platform">POUR WINDOWS</small>
+              <strong data-i18n="download.label">Télécharger VoidGlass</strong>
+            </span>
+          </a>
+          <div class="download-meta">
+            <span class="download-note" data-i18n="download.note">Gratuit · Windows 10/11</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <button class="hero-carousel" type="button" aria-label="Ouvrir le carrousel en plein écran" data-i18n-aria-label="hero.carouselFullscreenLabel">
+          <!-- Add a new <img> here after placing it in assets/images/carousel/. -->
+          <img class="is-active" src="assets/images/carousel/overlay_full.png" alt="Overlay VoidGlass en jeu" data-i18n-alt="hero.secondaryImageAlt">
+          <img src="assets/images/carousel/desktop_videoplayer.png" alt="Lecteur vidéo de VoidGlass" data-i18n-alt="hero.primaryImageAlt">
+          <span class="carousel-progress" aria-hidden="true"></span>
+          <span class="carousel-close" aria-hidden="true">×</span>
+        </button>
+        <div class="carousel-navigation" aria-label="Navigation du carrousel" data-i18n-aria-label="hero.carouselNavigationLabel">
+          <button class="carousel-control" type="button" data-carousel-direction="previous" aria-label="Image précédente" data-i18n-aria-label="hero.carouselPreviousLabel">←</button>
+          <button class="carousel-control" type="button" data-carousel-direction="next" aria-label="Image suivante" data-i18n-aria-label="hero.carouselNextLabel">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase" id="experience" aria-labelledby="showcase-title">
+      <div class="section-heading">
+        <h2 id="showcase-title" data-i18n="showcase.overlayTitle">Overlay</h2>
+      </div>
+
+      <article class="product-block">
+        <div class="screen-toolbar">
+          <span></span><span></span><span></span>
+          <small>VOIDGLASS / OVERLAY</small>
+        </div>
+        <img class="screen-image" src="assets/images/carousel/overlay_full.png" alt="Overlay VoidGlass pendant une partie" data-i18n-alt="showcase.overlayImageAlt">
+        <div class="screen-caption">
+          <p data-i18n="showcase.overlayCaption">Des widgets configurables directement au-dessus du jeu.</p>
+        </div>
+      </article>
+
+      <div class="section-heading recorder-heading">
+        <h2 data-i18n="showcase.recorderTitle">Recorder</h2>
+      </div>
+      <article class="product-block">
+          <div class="screen-toolbar">
+            <span></span><span></span><span></span>
+            <small>VOIDGLASS / GAME REPLAY</small>
+          </div>
+          <img class="screen-image" src="assets/images/carousel/desktop_videoplayer.png" alt="Lecteur vidéo de VoidGlass" data-i18n-alt="showcase.recorderImageAlt">
+          <div class="screen-caption">
+            <p data-i18n="showcase.recorderCaption">Revoir une partie enregistrée depuis le client desktop.</p>
+          </div>
+        </article>
+    </section>
+
+    <section class="faq-preview" id="faq" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title" data-i18n="faq.title">Questions fréquentes.</h2>
+        </div>
+        <a href="faq.html" data-i18n="faq.all">Voir toute la FAQ →</a>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary data-i18n="faq.performance.question">VoidGlass affecte-t-il les performances ?</summary>
+          <p data-i18n="faq.performance.answer">VoidGlass est conçu pour utiliser le moins de ressources possible. L’impact réel dépend de votre matériel et de vos réglages.</p>
+          <p><span data-i18n="faq.performance.note.before">Pour des informations détaillées, consultez les articles sur l’</span><a class="faq-article-link" href="articles/overlay.html" data-i18n="faq.performance.note.overlay">overlay</a><span data-i18n="faq.performance.note.middle"> et le </span><a class="faq-article-link" href="articles/recorder.html" data-i18n="faq.performance.note.recorder">recorder</a><span data-i18n="faq.performance.note.after">.</span></p>
+        </details>
+        <details>
+          <summary data-i18n="faq.riot.question">VoidGlass est-il autorisé par Riot Games ?</summary>
+          <p data-i18n="faq.riot.answer">Non, pas encore officiellement validé : le processus de validation est en cours. VoidGlass n’utilise aucune technique interdite par Riot Games et respecte les règles définies par Riot Games. Chaque nouvelle fonctionnalité sera également soumise à Riot Games avant son ajout.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.overwolf.question">VoidGlass utilise-t-il Overwolf ?</summary>
+          <p data-i18n="faq.overwolf.answer">Non. VoidGlass n’a aucun lien avec Overwolf.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.overlay.question">L’overlay est-il une application web Electron ?</summary>
+          <p data-i18n="faq.overlay.answer">Non. VoidGlass utilise libGDX, un framework de jeu qui manipule directement l’API graphique du GPU.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.components.question">Puis-je utiliser uniquement l’overlay ?</summary>
+          <p data-i18n="faq.components.answer">Oui. Vous pouvez également n’utiliser que le recorder.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.game.question">Quels jeux sont compatibles ?</summary>
+          <p data-i18n="faq.game.answer">VoidGlass est actuellement conçu pour League of Legends.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.account.question">Un compte est-il nécessaire ?</summary>
+          <p data-i18n="faq.account.answer">Non.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.pricing.question">VoidGlass est-il payant ou comporte-t-il des publicités ?</summary>
+          <p data-i18n="faq.pricing.answer">Zéro publicité, et il n’y en aura jamais. L’overlay et le recorder sont gratuits et sans restriction : pas de filigrane ni de limite. Des fonctionnalités futures pourront éventuellement faire l’objet d’une offre payante.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.recordings.question">Où sont sauvegardés les enregistrements ?</summary>
+          <p data-i18n="faq.recordings.answer">Dans le dossier Vidéos/VoidGlass. Cet emplacement est configurable et aucun export vers le cloud n’est effectué.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark"><img src="assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a>
+    <p>© <span id="year"></span> VOIDGLASS</p>
+    <nav class="footer-links" aria-label="Liens légaux">
+      <a href="stack.html">Stack</a>
+      <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+      <a href="terms.html" data-i18n="footer.terms">Terms</a>
+    </nav>
+    <p class="riot-disclaimer footer-riot-disclaimer" data-i18n="footer.riotDisclaimer">VoidGlass n'est pas approuvé par Riot Games et ne reflète pas les opinions de Riot Games ou de toute personne officiellement impliquée dans la production ou la gestion des propriétés Riot Games. Riot Games et toutes les propriétés associées sont des marques commerciales ou des marques déposées de Riot Games, Inc.</p>
+  </footer>
+
+  <script src="assets/lang/home/index.fr.js"></script>
+  <script src="assets/lang/home/index.en.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script data-goatcounter="https://voidglass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

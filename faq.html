@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Questions fréquentes sur VoidGlass." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#07080D">
+  <title>FAQ — VoidGlass</title>
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="VoidGlass, accueil"><span class="brand-mark"><img src="assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a>
+    <nav>
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="articles/index.html" data-i18n="nav.articles">Articles</a>
+      <a href="faq.html" class="current">FAQ</a>
+      <a href="#" class="discord-link" data-discord data-i18n="nav.discord">Discord</a>
+    </nav>
+    <div class="header-actions"><a class="header-download" href="#" data-download>Download</a><button class="language-switch" type="button" aria-label="Switch to English"><span class="active" data-language="fr">FR</span><span aria-hidden="true">/</span><span data-language="en">EN</span></button></div>
+  </header>
+
+  <main class="journal faq-page">
+    <header class="journal-header">
+      <p class="eyebrow">VOIDGLASS</p>
+      <h1 data-i18n="page.title">FAQ</h1>
+      <p data-i18n="page.intro">Les réponses aux questions les plus courantes.</p>
+    </header>
+    <section class="faq-list">
+      <details open>
+        <summary data-i18n="performance.question">VoidGlass affecte-t-il les performances ?</summary>
+        <p data-i18n="performance.answer">VoidGlass est conçu pour utiliser le moins de ressources possible. L’impact réel dépend de votre matériel, de la résolution et des réglages d’enregistrement.</p>
+        <p><span data-i18n="performance.note.before">Pour des informations détaillées, consultez les articles sur l’</span><a class="faq-article-link" href="articles/overlay.html" data-i18n="performance.note.overlay">overlay</a><span data-i18n="performance.note.middle"> et le </span><a class="faq-article-link" href="articles/recorder.html" data-i18n="performance.note.recorder">recorder</a><span data-i18n="performance.note.after">.</span></p>
+      </details>
+      <details>
+        <summary data-i18n="riot.question">VoidGlass est-il autorisé par Riot Games ?</summary>
+        <p data-i18n="riot.answer">Non, pas encore officiellement validé : le processus de validation est en cours. VoidGlass n’utilise aucune technique interdite par Riot Games et respecte les règles définies par Riot Games. Chaque nouvelle fonctionnalité sera également soumise à Riot Games avant son ajout.</p>
+      </details>
+      <details>
+        <summary data-i18n="overwolf.question">VoidGlass utilise-t-il Overwolf ?</summary>
+        <p data-i18n="overwolf.answer">Non. VoidGlass n’a aucun lien avec Overwolf.</p>
+      </details>
+      <details>
+        <summary data-i18n="overlay.question">L’overlay est-il une application web Electron ?</summary>
+        <p data-i18n="overlay.answer">Non. VoidGlass utilise libGDX, un framework de jeu qui manipule directement l’API graphique du GPU.</p>
+      </details>
+      <details>
+        <summary data-i18n="components.question">Puis-je utiliser uniquement l’overlay ?</summary>
+        <p data-i18n="components.answer">Oui. Vous pouvez également n’utiliser que le recorder.</p>
+      </details>
+      <details>
+        <summary data-i18n="game.question">Quels jeux sont compatibles ?</summary>
+        <p data-i18n="game.answer">VoidGlass est actuellement développé spécifiquement pour League of Legends.</p>
+      </details>
+      <details>
+        <summary data-i18n="recorder.question">Comment fonctionne le recorder ?</summary>
+        <p data-i18n="recorder.answer">Le recorder utilise l’encodage matériel du GPU lorsqu’il est disponible afin de limiter le travail demandé au processeur.</p>
+      </details>
+      <details>
+        <summary data-i18n="account.question">Un compte est-il nécessaire ?</summary>
+        <p data-i18n="account.answer">Non.</p>
+      </details>
+      <details>
+        <summary data-i18n="pricing.question">VoidGlass est-il payant ou comporte-t-il des publicités ?</summary>
+        <p data-i18n="pricing.answer">Zéro publicité, et il n’y en aura jamais. L’overlay et le recorder sont gratuits et sans restriction : pas de filigrane ni de limite. Des fonctionnalités futures pourront éventuellement faire l’objet d’une offre payante.</p>
+      </details>
+      <details>
+        <summary data-i18n="recordings.question">Où sont sauvegardés les enregistrements ?</summary>
+        <p data-i18n="recordings.answer">Dans le dossier Vidéos/VoidGlass. Cet emplacement est configurable et aucun export vers le cloud n’est effectué.</p>
+      </details>
+      <details>
+        <summary data-i18n="system.question">Quel système est compatible ?</summary>
+        <p data-i18n="system.answer">VoidGlass est prévu pour Windows 10 et Windows 11.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="index.html"><span class="brand-mark"><img src="assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a><p>© <span id="year"></span> VOIDGLASS</p></footer>
+  <script src="assets/lang/faq/index.fr.js"></script>
+  <script src="assets/lang/faq/index.en.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script data-goatcounter="https://voidglass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

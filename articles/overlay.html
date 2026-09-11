@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les choix de performance de l’overlay VoidGlass." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#07080D">
+  <title>Overlay performance — VoidGlass</title>
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="VoidGlass, accueil"><span class="brand-mark"><img src="../assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a>
+    <nav aria-label="Navigation principale"><a href="../index.html" data-i18n="nav.home">Accueil</a><a href="index.html" class="current" data-i18n="nav.articles">Articles</a><a href="../faq.html">FAQ</a><a href="#" class="discord-link" data-discord>Discord</a></nav>
+    <div class="header-actions"><a class="header-download" href="#" data-download>Download</a><button class="language-switch" type="button" aria-label="Switch to English"><span class="active" data-language="fr">FR</span><span aria-hidden="true">/</span><span data-language="en">EN</span></button></div>
+  </header>
+  <main class="article-page">
+    <a class="back-link" href="index.html" data-i18n="nav.back">← Tous les articles</a>
+    <article>
+      <p class="eyebrow" data-i18n="article.category">OVERLAY · PERFORMANCE</p>
+      <h1 data-i18n="article.title">Overlay et performances</h1>
+      <p class="article-lead" data-i18n="article.lead">Un overlay permet de rajouter de l'affichage par dessus</p>
+      <h2 data-i18n="section.types.title">Deux approches : injecté ou externe</h2>
+      <section class="approach" aria-labelledby="injected-title">
+        <h3 id="injected-title" data-i18n="section.injected.title">Overlay injecté</h3>
+        <p data-i18n="section.injected.p">Un overlay injecté s’exécute dans le processus du jeu et partage son espace mémoire. Il injecte son rendu dans le pipeline graphique utilisé par celui-ci, généralement autour de la présentation de la swapchain, sans fenêtre transparente séparée à placer au-dessus. Cette architecture a longtemps été privilégiée lorsque la composition de plusieurs fenêtres coûtait davantage.</p>
+        <div class="approach-tradeoffs">
+          <section class="tradeoff tradeoff-pros" aria-labelledby="injected-pros-title">
+            <h4 id="injected-pros-title" data-i18n="section.injected.pros.title">Avantages</h4>
+            <ul>
+              <li data-i18n="section.injected.pros.1">Pas de fenêtre externe à synchroniser avec le jeu.</li>
+              <li data-i18n="section.injected.pros.2">Le rendu peut être intégré directement au pipeline d’affichage du jeu.</li>
+            </ul>
+          </section>
+          <section class="tradeoff tradeoff-cons" aria-labelledby="injected-cons-title">
+            <h4 id="injected-cons-title" data-i18n="section.injected.cons.title">Limites</h4>
+            <ul>
+              <li data-i18n="section.injected.cons.1">L’overlay et le jeu partagent le même processus : un crash ou une surcharge peut affecter les deux.</li>
+              <li data-i18n="section.injected.cons.2">L’injection interagit avec le processus du jeu ; elle peut être refusée par l’anti-triche ou incompatible avec certains titres.</li>
+            </ul>
+          </section>
+        </div>
+        <p class="approach-note" data-i18n="section.external.windows">Sur les versions modernes de Windows, le Desktop Window Manager est conçu pour composer les fenêtres d’applications. Lorsqu’elles remplissent les conditions nécessaires, les fenêtres externes peuvent aussi bénéficier du Multi-Plane Overlay. Une fenêtre externe n’est donc plus systématiquement synonyme d’un coût de composition important, même si le résultat reste propre à chaque configuration.</p>
+      </section>
+      <section class="approach" aria-labelledby="external-title">
+        <h3 id="external-title" data-i18n="section.external.title">Overlay externe</h3>
+        <p data-i18n="section.external.p">Un overlay externe est une fenêtre indépendante et transparente, affichée au-dessus du jeu. Elle peut être configurée pour laisser les entrées souris et clavier traverser vers le jeu et ne s’exécute pas dans son processus. Si elle ralentit ou s’arrête, le jeu reste dans un processus distinct.</p>
+        <div class="approach-tradeoffs">
+          <section class="tradeoff tradeoff-pros" aria-labelledby="external-pros-title">
+            <h4 id="external-pros-title" data-i18n="section.external.pros.title">Avantages</h4>
+            <ul>
+              <li data-i18n="section.external.pros.1">Isolation du jeu : l’overlay ne partage ni son processus ni son espace mémoire.</li>
+              <li data-i18n="section.external.pros.2">Pas d’injection dans le jeu, ce qui réduit les problèmes de compatibilité liés à cette technique.</li>
+            </ul>
+          </section>
+          <section class="tradeoff tradeoff-cons" aria-labelledby="external-cons-title">
+            <h4 id="external-cons-title" data-i18n="section.external.cons.title">Limites</h4>
+            <ul>
+              <li data-i18n="section.external.cons.1">Il faut gérer le placement, la transparence, le focus et le passage des entrées au jeu.</li>
+              <li data-i18n="section.external.cons.2">Windows doit présenter et composer une fenêtre supplémentaire ; le coût varie selon la configuration et le chemin d’affichage utilisé.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+      <h2 data-i18n="section.mpo.title">Le rôle du Multi-Plane Overlay (MPO)</h2>
+      <p data-i18n="section.mpo.p1">Dans le chemin classique, le Desktop Window Manager (DWM) compose les différentes surfaces avant leur affichage. Avec le Multi-Plane Overlay (MPO), certaines surfaces peuvent être confiées à des plans matériels séparés, ce qui évite une partie de cette composition.</p>
+      <p data-i18n="section.mpo.p2">Le MPO dépend du GPU, du pilote, de Windows, de l’écran, du format et de la taille des surfaces, ainsi que du mode d’affichage utilisé. Un PC compatible ne garantit donc pas que MPO sera utilisé dans toutes les situations. L’impact reste lié à la configuration et au chemin de présentation actif.</p>
+      <p data-i18n="section.mpo.p3">Les informations graphiques de Windows, notamment via dxdiag, permettent de vérifier certaines capacités du système, mais elles ne garantissent pas que MPO est utilisé à un instant donné. PresentMon permet d’observer le chemin de présentation réellement utilisé pendant le jeu.</p>
+      <h2 data-i18n="section.voidglass.title">Dans VoidGlass</h2>
+      <p data-i18n="section.voidglass.p1">VoidGlass est un overlay externe. Lorsque la configuration le permet, Windows et le pilote peuvent présenter sa surface via le Multi-Plane Overlay. Il est basé sur une version adaptée de libGDX, un framework de jeux vidéo. L’idée est de ne redessiner que ce qui change et de ne charger que le nécessaire.</p>
+      <h3 class="performance-title" data-i18n="section.voidglass.performance.title">Mesures actuelles — overlay uniquement</h3>
+      <h4 class="test-system-title" data-i18n="section.voidglass.config.title">Configuration de test</h4>
+      <ul class="test-system-list">
+        <li><strong data-i18n="section.voidglass.config.cpu.label">CPU</strong><span data-i18n="section.voidglass.config.cpu.value">
+          Intel Core i7-4790K — légende absolue, l’APM de Faker en 2014.</span></li>
+        <li><strong data-i18n="section.voidglass.config.gpu.label">GPU</strong><span data-i18n="section.voidglass.config.gpu.value">
+          GTX 970 — elle a fait tourner Crysis 3. L’histoire ne retient que ses 0,5 Go de mémoire un peu lents.</span></li>
+        <li><strong data-i18n="section.voidglass.config.ram.label">RAM</strong><span data-i18n="section.voidglass.config.ram.value">
+          8 Go en DDR3 — mieux vaut oublier les onglets Chrome sur le deuxième écran.</span></li>
+        <li><strong data-i18n="section.voidglass.config.motherboard.label">Carte mère</strong><span data-i18n="section.voidglass.config.motherboard.value">
+          MSI Z97 GAMING 5 — elle a vu tomber son pote le HDD, trois souris, deux claviers et deux écrans. Passage à Windows 11 impossible.</span></li>
+      </ul>
+      <h4 class="performance-subtitle" data-i18n="section.voidglass.performance.subtitle">Mesures</h4>
+      <ul class="performance-list">
+        <li><strong data-i18n="section.voidglass.performance.cpu.label">CPU en jeu</strong> <span data-i18n="section.voidglass.performance.cpu.value">moins de 1 %</span></li>
+        <li><strong data-i18n="section.voidglass.performance.gpu.label">GPU en jeu</strong> <span data-i18n="section.voidglass.performance.gpu.value">moins de 1 %</span></li>
+        <li><strong data-i18n="section.voidglass.performance.vram.label">VRAM</strong> <span data-i18n="section.voidglass.performance.vram.value">moins de 50 Mo</span></li>
+        <li><strong data-i18n="section.voidglass.performance.ram.label">RAM</strong> <span data-i18n="section.voidglass.performance.ram.value">environ 100 à 120 Mo — réduction en cours</span></li>
+      </ul>
+      <p data-i18n="section.voidglass.p2">Ces mesures viennent de la configuration de test actuelle. Elles sont indicatives, pas une garantie pour chaque PC : le jeu, le GPU, le pilote, Windows et les réglages d’affichage influencent le résultat.</p>
+      <p class="recorder-note" data-i18n="section.voidglass.recorder">Ces chiffres concernent l’overlay seul. L’enregistreur consomme forcément des ressources supplémentaires pour la capture et l’encodage vidéo ; leur niveau dépend notamment des réglages choisis et du matériel.</p>
+      <p data-i18n="section.voidglass.p3">Le type d’overlay ne fait pas tout. CPU, GPU et mémoire sont partagés avec le jeu : un overlay, injecté ou externe, peut gêner le jeu s’il fait trop de travail ou consomme trop de mémoire.</p>
+    </article>
+  </main>
+  <footer><a class="brand footer-brand" href="../index.html"><span class="brand-mark"><img src="../assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a><p>© <span id="year"></span> VOIDGLASS</p></footer>
+  <script src="../assets/lang/articles/overlay/index.fr.js"></script>
+  <script src="../assets/lang/articles/overlay/index.en.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script data-goatcounter="https://voidglass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

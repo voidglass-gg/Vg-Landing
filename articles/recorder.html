@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les choix de performance du recorder VoidGlass." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#07080D">
+  <title>Recorder performance — VoidGlass</title>
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="VoidGlass, accueil"><span class="brand-mark"><img src="../assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a>
+    <nav aria-label="Navigation principale"><a href="../index.html" data-i18n="nav.home">Accueil</a><a href="index.html" class="current" data-i18n="nav.articles">Articles</a><a href="../faq.html">FAQ</a><a href="#" class="discord-link" data-discord>Discord</a></nav>
+    <div class="header-actions"><a class="header-download" href="#" data-download>Download</a><button class="language-switch" type="button" aria-label="Switch to English"><span class="active" data-language="fr">FR</span><span aria-hidden="true">/</span><span data-language="en">EN</span></button></div>
+  </header>
+  <main class="article-page">
+    <a class="back-link" href="index.html" data-i18n="nav.back">← Tous les articles</a>
+    <article>
+      <p class="eyebrow" data-i18n="article.category">RECORDER · PERFORMANCE</p>
+      <h1 data-i18n="article.title">Recorder et performances</h1>
+      <p class="article-lead" data-i18n="article.lead">Un recorder doit enregistrer la partie, pas la faire ramer. Mais le résultat dépend de plusieurs choix techniques.</p>
+      <h2 data-i18n="section.encoding.title">L’encodage : logiciel ou matériel</h2>
+      <p data-i18n="section.encoding.p1">Le premier choix, c’est l’encodeur.
+        En logiciel, l’encodage repose surtout sur le CPU : on peut obtenir une très bonne qualité, mais cela consomme des ressources processeur.
+        En matériel, l’encodage utilise un bloc dédié du GPU ou du CPU ; la qualité peut être différente, mais il ne prend pas les mêmes ressources.</p>
+      <p data-i18n="section.encoding.p2">Les GPU et CPU récents ont souvent leurs propres encodeurs matériels, avec des qualités variables.
+        Pour jouer, l’encodeur matériel du GPU est le plus logique : l’image est produite par le GPU et peut être encodée sur place, plutôt que d’être envoyée au CPU pour encodage.</p>
+      <h2 data-i18n="section.tools.title">Les solutions de record d’écran</h2>
+      <p data-i18n="section.tools.intro">Si je les classe uniquement sur la performance en enregistrement de jeu, je les place dans cet ordre. Le résultat reste lié au matériel et aux réglages, mais leurs approches sont différentes.</p>
+      <h3 data-i18n="section.tools.rank1.title">01 — NVIDIA ShadowPlay / AMD ReLive</h3>
+      <p data-i18n="section.tools.rank1.p">Les solutions intégrées aux pilotes graphiques sont au plus près du GPU et de son encodeur matériel. Elles ont en général l’impact le plus faible sur les FPS. Leur limite : elles sont moins ouvertes et proposent moins de fonctions avancées qu’un outil généraliste.</p>
+      <h3 data-i18n="section.tools.rank2.title">02 — Bandicam</h3>
+      <p data-i18n="section.tools.rank2.p">Bandicam gère son propre pipeline, de la capture à l’encodage. La tech KR au sommet, comme sur la midlane : cette chaîne maîtrisée de bout en bout le rend très efficace pour l’enregistrement d’écran.</p>
+      <h3 data-i18n="section.tools.rank3.title">03 — OBS Studio</h3>
+      <p data-i18n="section.tools.rank3.p">OBS Studio est un outil open source très stable, très complet et bien optimisé. Il est aussi pensé pour le streaming et la composition de scènes : selon les sources, une étape de composition s’ajoute avant l’encodage. Ce n’est pas un défaut, c’est le prix de sa souplesse.</p>
+      <h2 data-i18n="section.capture.title">Trois manières de capturer l’image</h2>
+      <section class="approach" aria-labelledby="hook-title">
+        <h3 id="hook-title" data-i18n="section.capture.hook.title">Capture au niveau du rendu</h3>
+        <p data-i18n="section.capture.hook.intro">Cette méthode récupère l’image directement depuis le pipeline graphique du jeu et la transmet au pipeline du recorder, sans passer par la capture d’une fenêtre composée par Windows.</p>
+        <div class="approach-tradeoffs">
+          <section class="tradeoff tradeoff-pros" aria-labelledby="hook-pros-title"><h4 id="hook-pros-title" data-i18n="section.capture.hook.pros.title">Avantages</h4><ul><li data-i18n="section.capture.hook.pro1">Le recorder reçoit l’image avant la composition de la fenêtre par Windows.</li><li data-i18n="section.capture.hook.pro2">L’image reste à la résolution de rendu du jeu, avant toute transformation pour l’écran.</li></ul></section>
+          <section class="tradeoff tradeoff-cons" aria-labelledby="hook-cons-title"><h4 id="hook-cons-title" data-i18n="section.capture.hook.cons.title">Limites</h4><ul><li data-i18n="section.capture.hook.con1">Le recorder interagit directement avec le jeu : un souci peut affecter sa stabilité.</li><li data-i18n="section.capture.hook.con2">Certains anti-triche refusent l’injection et certains rendus ne se laissent pas facilement capturer ainsi.</li></ul></section>
+        </div>
+      </section>
+      <section class="approach" aria-labelledby="wgc-title">
+        <h3 id="wgc-title" data-i18n="section.capture.wgc.title">Windows Graphics Capture</h3>
+        <p data-i18n="section.capture.wgc.intro">Windows Graphics Capture récupère la fenêtre du jeu par une API Windows. L’image récupérée correspond aux dimensions de la fenêtre capturée, qui peuvent différer de la résolution de rendu interne du jeu.</p>
+        <div class="approach-tradeoffs">
+          <section class="tradeoff tradeoff-pros" aria-labelledby="wgc-pros-title"><h4 id="wgc-pros-title" data-i18n="section.capture.wgc.pros.title">Avantages</h4><ul><li data-i18n="section.capture.wgc.pro1">Aucune injection dans le jeu.</li><li data-i18n="section.capture.wgc.pro2">Bonnes performances et large compatibilité.</li></ul></section>
+          <section class="tradeoff tradeoff-cons" aria-labelledby="wgc-cons-title"><h4 id="wgc-cons-title" data-i18n="section.capture.wgc.cons.title">Limites</h4><ul><li data-i18n="section.capture.wgc.con1">La résolution capturée est celle de la fenêtre, pas forcément celle du rendu interne : un jeu rendu en 4K dans une fenêtre 1080p sera capturé en 1080p.</li><li data-i18n="section.capture.wgc.con2">Sur certaines anciennes versions de Windows 10, un cadre jaune peut signaler la capture de la fenêtre.</li></ul></section>
+        </div>
+      </section>
+      <section class="approach" aria-labelledby="desktop-title">
+        <h3 id="desktop-title" data-i18n="section.capture.desktop.title">Duplication du bureau</h3>
+        <p data-i18n="section.capture.desktop.intro">La duplication du bureau récupère l’image de la sortie écran via Windows. Elle ne récupère pas forcément la résolution de rendu interne du jeu.</p>
+        <div class="approach-tradeoffs">
+          <section class="tradeoff tradeoff-pros" aria-labelledby="desktop-pros-title"><h4 id="desktop-pros-title" data-i18n="section.capture.desktop.pros.title">Avantages</h4><ul><li data-i18n="section.capture.desktop.pro1">Aucune injection et bonne compatibilité.</li><li data-i18n="section.capture.desktop.pro2">Pas de cadre jaune, même sur les anciennes versions de Windows 10.</li></ul></section>
+          <section class="tradeoff tradeoff-cons" aria-labelledby="desktop-cons-title"><h4 id="desktop-cons-title" data-i18n="section.capture.desktop.cons.title">Limites</h4><ul><li data-i18n="section.capture.desktop.con1">L’image est récupérée à la résolution de la sortie écran capturée, pas forcément à celle du rendu du jeu.</li><li data-i18n="section.capture.desktop.con2">Tout l’écran est capturé : fenêtres et overlays visibles compris.</li></ul></section>
+        </div>
+      </section>
+      <h2 data-i18n="section.voidglass.title">Dans VoidGlass</h2>
+      <p data-i18n="section.voidglass.p1">VoidGlass utilise libobs, le moteur d’OBS, dans un processus dédié. L’interface principale le pilote en IPC : le travail de capture et d’encodage reste isolé du reste de l’application.</p>
+      <p data-i18n="section.voidglass.p2">Cette séparation ne supprime pas le coût de l’enregistrement, mais elle évite que le recorder partage directement le processus de l’overlay. Le choix de la capture, de l’encodeur et des réglages reste adapté au jeu et à la configuration. La partie reste prioritaire.</p>
+    </article>
+  </main>
+  <footer><a class="brand footer-brand" href="../index.html"><span class="brand-mark"><img src="../assets/images/VoidGlass.png" alt=""></span><span>VOIDGLASS</span></a><p>© <span id="year"></span> VOIDGLASS</p></footer>
+  <script src="../assets/lang/articles/recorder/index.fr.js"></script>
+  <script src="../assets/lang/articles/recorder/index.en.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script data-goatcounter="https://voidglass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

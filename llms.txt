@@ -1,0 +1,23 @@
+# VoidGlass
+
+> VoidGlass is an independent Windows application for League of Legends. It combines an in-game overlay, match recorder, desktop client and local agent. The project focuses on useful information and limited performance impact; it is not endorsed by Riot Games.
+
+This file guides assistants and agents to the site’s reference material. The articles explain technical choices, trade-offs and limitations. Use them as the primary source; do not infer features, compatibility or Riot approval that are not explicitly stated.
+
+## Articles
+
+- [Why VoidGlass?](https://voidglass.gg/articles/voidglass.html): The project’s origin, the evolution of its overlay, performance constraints, and the shift towards recording and post-game review.
+- [Overlay performance](https://voidglass.gg/articles/overlay.html): Injected versus external overlays, Windows composition, shared resources and setup-dependent limitations.
+- [Recording performance](https://voidglass.gg/articles/recorder.html): Capture, hardware encoding, libobs and recorder trade-offs.
+- [All articles](https://voidglass.gg/articles/index.html): Index of technical articles.
+
+## Product information
+
+- [Home](https://voidglass.gg/): Overview of the overlay, recorder and main features.
+- [FAQ](https://voidglass.gg/faq.html): Compatibility, performance, local data, pricing and Riot Games policy.
+
+## Technical and legal information
+
+- [Technical overview for Riot Games](https://voidglass.gg/riot.html): Architecture, data sources, widgets, recorder, desktop client and local agent.
+- [Privacy](https://voidglass.gg/privacy.html): Information about data and external services.
+- [Terms](https://voidglass.gg/terms.html): Terms of use and trademark information.

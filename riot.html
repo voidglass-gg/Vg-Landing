@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical overview of VoidGlass for Riot Games review." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#07080D">
+  <title>VoidGlass — Riot Games Review</title>
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="riot-review">
+  <header class="site-header riot-site-header">
+    <a class="brand" href="index.html" aria-label="VoidGlass home">
+      <span class="brand-mark"><img src="assets/images/VoidGlass.png" alt=""></span>
+      <span>VOIDGLASS</span>
+    </a>
+    <span class="riot-review-label" data-i18n="header.review">Riot Games review</span>
+  </header>
+
+  <main class="riot-page">
+    <header class="riot-intro">
+      <div>
+        <p class="eyebrow" data-i18n="intro.eyebrow">Product overview</p>
+        <h1>VoidGlass</h1>
+        <p class="riot-lead" data-i18n="intro.lead">VoidGlass is an independent Windows application for League of Legends. It includes an in-game overlay, a match recorder, a desktop client and a local agent.</p>
+        <a class="riot-download" href="#" data-download data-i18n="intro.download">Download VoidGlass</a>
+      </div>
+      <dl class="riot-identifiers">
+        <div><dt data-i18n="ids.product">Riot product ID</dt><dd data-i18n="ids.pending">To be added</dd></div>
+        <div><dt data-i18n="ids.request">Riot request ID</dt><dd data-i18n="ids.pending">To be added</dd></div>
+        <div><dt data-i18n="ids.apiKey">Current API key</dt><dd data-i18n="ids.none">None</dd></div>
+        <div><dt data-i18n="ids.platform">Platform</dt><dd>Windows 10 / 11</dd></div>
+      </dl>
+    </header>
+
+    <section class="riot-section" aria-labelledby="data-title">
+      <div class="riot-section-heading">
+        <span>01</span>
+        <div>
+          <p class="eyebrow" data-i18n="data.eyebrow">Current data sources</p>
+          <h2 id="data-title" data-i18n="data.title">Data used by the application</h2>
+        </div>
+      </div>
+      <div class="riot-copy-grid">
+        <p data-i18n="data.body1">VoidGlass does not currently use a Riot API key. During a match, it reads the local Live Client Data endpoint. It also uses the League Client API to detect client and match state.</p>
+        <p data-i18n="data.body2">Data Dragon provides champion and item icons and other static game data. Local player configuration files are read only when needed to determine display mode, screen resolution and assigned ability keys.</p>
+      </div>
+      <p class="riot-policy-note" data-i18n="data.policy">The overlay is limited to information available to the player. It is not designed to reveal hidden game information.</p>
+    </section>
+
+    <section class="riot-section" aria-labelledby="overlay-title">
+      <div class="riot-section-heading">
+        <span>02</span>
+        <div>
+          <p class="eyebrow" data-i18n="overlay.eyebrow">In-game component</p>
+          <h2 id="overlay-title" data-i18n="overlay.title">Overlay</h2>
+        </div>
+      </div>
+      <p class="riot-section-intro" data-i18n="overlay.intro">The overlay currently contains three widgets. Each widget can be resized, moved or closed during a match and displays the VoidGlass logo.</p>
+
+      <div class="riot-widget-grid">
+        <figure class="riot-widget-card">
+          <div class="riot-widget-image"><img src="assets/images/screenshot/overlay_objective_timer.png" alt="VoidGlass objective timer widget" data-i18n-alt="overlay.objectiveAlt"></div>
+          <figcaption><strong data-i18n="overlay.objectiveTitle">Objective timer</strong><span data-i18n="overlay.objectiveBody">Displays timers for epic neutral objectives.</span></figcaption>
+        </figure>
+        <figure class="riot-widget-card">
+          <div class="riot-widget-image"><img src="assets/images/screenshot/overlay_gold_stuff.png" alt="VoidGlass item gold value widget" data-i18n-alt="overlay.goldAlt"></div>
+          <figcaption><strong data-i18n="overlay.goldTitle">Item gold value</strong><span data-i18n="overlay.goldBody">Shows the total value of visible player items.</span></figcaption>
+        </figure>
+        <figure class="riot-widget-card">
+          <div class="riot-widget-image"><img src="assets/images/screenshot/overla_control_ward.png" alt="VoidGlass allied Control Ward widget" data-i18n-alt="overlay.wardsAlt"></div>
+          <figcaption><strong data-i18n="overlay.wardsTitle">Allied Control Wards</strong><span data-i18n="overlay.wardsBody">Shows Control Wards held by allied players.</span></figcaption>
+        </figure>
+      </div>
+
+      <figure class="riot-wide-shot">
+        <img src="assets/images/screenshot/overlay_full.png" alt="All VoidGlass widgets displayed during a League of Legends match" data-i18n-alt="overlay.fullAlt">
+        <figcaption data-i18n="overlay.fullCaption">Full in-game view with the three current widgets enabled.</figcaption>
+      </figure>
+    </section>
+
+    <section class="riot-section" aria-labelledby="recorder-title">
+      <div class="riot-section-heading">
+        <span>03</span>
+        <div>
+          <p class="eyebrow" data-i18n="recorder.eyebrow">Recording component</p>
+          <h2 id="recorder-title" data-i18n="recorder.title">Recorder</h2>
+        </div>
+      </div>
+      <div class="riot-copy-grid">
+        <p data-i18n="recorder.body1">The recorder is based on libobs. It uses graphics capture when available and provides a fallback capture method.</p>
+        <p data-i18n="recorder.body2">Hardware encoding is used when supported by the player’s GPU. Recording runs separately from the game and is designed to limit CPU and memory use.</p>
+      </div>
+      <figure class="riot-wide-shot">
+        <img src="assets/images/screenshot/desktop_videoplayer.png" alt="Recorded League of Legends match in the VoidGlass desktop video player" data-i18n-alt="recorder.imageAlt">
+        <figcaption data-i18n="recorder.caption">A recorded match opened in the desktop video player.</figcaption>
+      </figure>
+    </section>
+
+    <section class="riot-section" aria-labelledby="desktop-title">
+      <div class="riot-section-heading">
+        <span>04</span>
+        <div>
+          <p class="eyebrow" data-i18n="desktop.eyebrow">User interface</p>
+          <h2 id="desktop-title" data-i18n="desktop.title">Desktop client</h2>
+        </div>
+      </div>
+      <p class="riot-section-intro" data-i18n="desktop.intro">The desktop client configures the overlay and recorder. It also lists recorded matches and opens them for playback.</p>
+      <div class="riot-shot-grid">
+        <figure class="riot-wide-shot">
+          <img src="assets/images/screenshot/desktop_history.png" alt="VoidGlass recorded match history" data-i18n-alt="desktop.historyAlt">
+          <figcaption data-i18n="desktop.historyCaption">Recorded match history.</figcaption>
+        </figure>
+        <figure class="riot-wide-shot">
+          <img src="assets/images/screenshot/desktop_videoplayer.png" alt="VoidGlass desktop match replay" data-i18n-alt="desktop.replayAlt">
+          <figcaption data-i18n="desktop.replayCaption">Desktop match replay.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="riot-section" aria-labelledby="agent-title">
+      <div class="riot-section-heading">
+        <span>05</span>
+        <div>
+          <p class="eyebrow" data-i18n="agent.eyebrow">Local component</p>
+          <h2 id="agent-title" data-i18n="agent.title">Agent</h2>
+        </div>
+      </div>
+      <div class="riot-copy-grid">
+        <p data-i18n="agent.body1">The Java agent detects the League client state and the beginning and end of each match. It starts and coordinates the local components required by the configured features.</p>
+        <p data-i18n="agent.body2">The agent remains accessible from the Windows system tray. Its menu opens the desktop client, provides access to configuration, shows its active state and allows the user to quit.</p>
+      </div>
+      <div class="riot-tray-grid">
+        <figure class="riot-widget-card">
+          <div class="riot-widget-image"><img src="assets/images/screenshot/trail_1.png" alt="VoidGlass icon in the Windows system tray" data-i18n-alt="agent.trayAlt"></div>
+          <figcaption><strong data-i18n="agent.trayTitle">System tray</strong><span data-i18n="agent.trayBody">VoidGlass running locally.</span></figcaption>
+        </figure>
+        <figure class="riot-widget-card">
+          <div class="riot-widget-image"><img src="assets/images/screenshot/trail_2.png" alt="VoidGlass agent system tray menu" data-i18n-alt="agent.menuAlt"></div>
+          <figcaption><strong data-i18n="agent.menuTitle">Agent menu</strong><span data-i18n="agent.menuBody">Local controls and current status.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="riot-section riot-api-section" aria-labelledby="api-title">
+      <div class="riot-section-heading">
+        <span>06</span>
+        <div>
+          <p class="eyebrow" data-i18n="api.eyebrow">Requested Riot API use</p>
+          <h2 id="api-title" data-i18n="api.title">Post-game analysis</h2>
+        </div>
+      </div>
+      <p class="riot-section-intro" data-i18n="api.body">Riot API access would be used to retrieve match history, ranked information, match details and timelines. This data would support post-game review by helping identify and contextualize relevant moments in a recorded match.</p>
+      <p class="riot-policy-note" data-i18n="api.policy">If a current or planned feature does not comply with Riot Games policies for third-party applications, it will be changed or removed.</p>
+    </section>
+  </main>
+
+  <footer class="riot-footer">
+    <span>VOIDGLASS</span>
+    <span data-i18n="footer.overview">Technical product overview</span>
+    <span>2026</span>
+  </footer>
+  <script src="assets/lang/riot/index.en.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script data-goatcounter="https://voidglass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

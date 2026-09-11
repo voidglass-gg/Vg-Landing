@@ -1,0 +1,21 @@
+window.VOIDGLASS_LANG = window.VOIDGLASS_LANG || {};
+window.VOIDGLASS_LANG.en = {
+  "meta.title": "Articles — VoidGlass",
+  "meta.description": "Articles about the VoidGlass project, overlay and recorder.",
+  "nav.home": "Home",
+  "nav.articles": "Articles",
+  "page.title": "Articles",
+  "page.read": "Read article →",
+  "voidglass.category": "THE PROJECT",
+  "voidglass.title": "Why VoidGlass?",
+  "voidglass.lead": "Why I started VoidGlass, and why the project then changed.",
+  "voidglass.preview": "I wanted jungle timers without giving up a smooth game. Once League added them, the overlay became more optional and the project moved towards recording.",
+  "recorder.category": "RECORDER",
+  "recorder.title": "Recording and performance",
+  "recorder.lead": "What happens between the game image and the video file.",
+  "recorder.preview": "Software or hardware encoding, hooking, window or desktop capture: every choice has advantages and limits depending on the PC and game.",
+  "overlay.category": "OVERLAY",
+  "overlay.title": "Overlays and performance",
+  "overlay.lead": "Why an overlay can be injected or external, and what that actually changes.",
+  "overlay.preview": "An external overlay avoids entering the game, but adds a window to compose. MPO can help, but its availability depends on the whole setup.",
+};
