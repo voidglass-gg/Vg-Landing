@@ -301,11 +301,13 @@ footer p:last-child { justify-self: end; }
 
 @media (max-width: 700px) {
   .site-header, main, footer { width: min(calc(100% - 28px), var(--max-width)); }
-  .site-header { height: 70px; }
+  .site-header { grid-template-columns: auto 1fr auto; grid-template-rows: 70px 48px; height: 118px; }
+  .site-header > .brand { grid-column: 1; grid-row: 1; }
+  .site-header > .header-actions { grid-column: 3; grid-row: 1; }
   .brand > span:last-child { display: none; }
-  .site-header nav { display: none; }
-  nav a[href^="#"] { display: none; }
-  nav a:not(.discord-link):not([href*="articles"]):not([href="index.html"]) { display: none; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; width: 100%; min-width: 0; gap: 18px; padding-bottom: 2px; overflow-x: auto; scrollbar-width: none; }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav a { display: inline-block; flex: none; }
   .hero { min-height: auto; padding: 72px 0 86px; }
   h1 { font-size: clamp(2.75rem, 13vw, 4.15rem); }
   .hero-description { max-width: 95%; }

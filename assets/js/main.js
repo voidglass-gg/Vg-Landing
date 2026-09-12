@@ -1,5 +1,5 @@
 // Replace this value with the final installer URL.
-const DOWNLOAD_URL = "https://example.com/voidglass-download";
+const DOWNLOAD_URL = "https://download.voidglass.gg/releases/0.1/VoidGlass.exe";
 const DISCORD_URL = "https://discord.gg/2zJp7kP3J";
 
 const languageSwitch = document.querySelector(".language-switch");
